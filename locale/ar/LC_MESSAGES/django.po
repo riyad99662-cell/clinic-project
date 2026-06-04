@@ -1,0 +1,593 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-03 13:12+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: .\ai\views.py:32
+#, fuzzy
+#| msgid "Both fields are required"
+msgid "Symptoms are required."
+msgstr "كلا الحقلين مطلوبان"
+
+#: .\ai\views.py:45
+#, fuzzy
+#| msgid "Patient not found."
+msgid "Patient profile not found."
+msgstr "لم يتم العثور على المريض."
+
+#: .\ai\views.py:58
+msgid "AI analysis failed."
+msgstr "فشل تحليل الذكاء الاصطناعي"
+
+#: .\ai\views.py:99 .\doctor\views.py:70 .\doctor\views.py:146
+#: .\doctor\views.py:228 .\doctor\views.py:262 .\doctor\views.py:351
+#: .\doctor\views.py:390 .\doctor\views.py:475 .\doctor\views.py:551
+#: .\doctor\views.py:691 .\doctor\views.py:755 .\doctor\views.py:808
+#: .\doctor\views.py:851 .\doctor\views.py:931 .\doctor\views.py:1000
+#: .\doctor\views.py:1064 .\doctor\views.py:1124 .\doctor\views.py:1193
+#: .\doctor\views.py:1264 .\doctor\views.py:1310 .\doctor\views.py:1388
+#: .\doctor\views.py:1408 .\doctor\views.py:1449 .\doctor\views.py:1534
+#: .\doctor\views.py:1614 .\doctor\views.py:1698 .\doctor\views.py:1770
+#: .\doctor\views.py:1977
+msgid "Doctor profile not found."
+msgstr "لم يتم العثور على ملف الطبيب."
+
+#: .\ai\views.py:116 .\doctor\views.py:81 .\doctor\views.py:1017
+#: .\doctor\views.py:1078 .\doctor\views.py:1138 .\doctor\views.py:1207
+#: .\doctor\views.py:1556
+msgid "Appointment not found."
+msgstr "لم يتم العثور على الموعد."
+
+#: .\clinic\settings.py:128
+msgid "English"
+msgstr "الإنجليزية"
+
+#: .\clinic\settings.py:129
+msgid "Arabic"
+msgstr "العربية"
+
+#: .\doctor\serializers.py:347 .\doctor\serializers.py:371
+msgid "Medication name too short"
+msgstr "اسم الدواء قصير جداً"
+
+#: .\doctor\views.py:94
+msgid "Invalid status. Allowed values are 'approved' or 'rejected'."
+msgstr "الحالة غير صالحة. القيم المسموح بها هي 'مقبول' أو 'مرفوض'."
+
+#: .\doctor\views.py:104
+#, fuzzy, python-format
+#| msgid "Your appointment has been approved."
+msgid "Your appointment has been approved by Dr. %(doctor_name)s."
+msgstr "يمكن قبول المواعيد المعلقة فقط."
+
+#: .\doctor\views.py:105
+#, fuzzy, python-format
+#| msgid "Your appointment has been rejected."
+msgid "Your appointment has been rejected by Dr. %(doctor_name)s."
+msgstr "طلب موعد جديد."
+
+#: .\doctor\views.py:110
+#, fuzzy
+#| msgid "Appointment Approved"
+msgid "Appointment Status Updated"
+msgstr "تم قبول الموعد بنجاح."
+
+#: .\doctor\views.py:119
+msgid "approved"
+msgstr "مقبول"
+
+#: .\doctor\views.py:120
+msgid "rejected"
+msgstr "مرفوض"
+
+#: .\doctor\views.py:121
+msgid "cancelled"
+msgstr "ملغي"
+
+#: .\doctor\views.py:127
+#, python-format
+msgid "Appointment %(status)s successfully."
+msgstr "تم %(status)s الموعد بنجاح."
+
+#: .\doctor\views.py:201
+msgid "Dashboard data retrieved successfully."
+msgstr "تم جلب بيانات لوحة التحكم بنجاح."
+
+#: .\doctor\views.py:271 .\doctor\views.py:1629 .\doctor\views.py:1712
+#: .\doctor\views.py:1785 .\doctor\views.py:1865 .\doctor\views.py:1925
+#: .\doctor\views.py:1992
+msgid "Patient not found."
+msgstr "لم يتم العثور على المريض."
+
+#: .\doctor\views.py:283
+msgid "You are not allowed to access this patient."
+msgstr "غير مسموح لك بالوصول إلى هذا المريض."
+
+#: .\doctor\views.py:310
+msgid "Patient details retrieved successfully."
+msgstr "تم جلب تفاصيل المريض بنجاح."
+
+#: .\doctor\views.py:408
+#, python-format
+msgid "Appointment with %(username)s is scheduled soon."
+msgstr "يوجد موعد قريب مع %(username)s."
+
+#: .\doctor\views.py:427
+#, python-format
+msgid "Missed appointment with %(username)s."
+msgstr "هناك موعد فائت مع %(username)s."
+
+#: .\doctor\views.py:444
+#, python-format
+msgid "Pending payment for appointment #%(appointment_id)s."
+msgstr "توجد دفعة معلقة للموعد رقم %(appointment_id)s."
+
+#: .\doctor\views.py:455
+msgid "Alerts retrieved successfully."
+msgstr "تم جلب التنبيهات بنجاح."
+
+#: .\doctor\views.py:510
+msgid "Earnings retrieved successfully."
+msgstr "تم جلب الأرباح بنجاح."
+
+#: .\doctor\views.py:638
+msgid "No appointment found for this patient."
+msgstr "لم يتم العثور على أي موعد لهذا المريض."
+
+#: .\doctor\views.py:664
+msgid "Medical record updated successfully."
+msgstr "تم تحديث السجل الطبي بنجاح."
+
+#: .\doctor\views.py:684
+msgid "record_id and prescriptions are required."
+msgstr "المعرف record_id والوصفات prescriptions مطلوبان."
+
+#: .\doctor\views.py:706 .\doctor\views.py:1941
+msgid "Medical record not found."
+msgstr "لم يتم العثور على السجل الطبي."
+
+#: .\doctor\views.py:728
+msgid "New Prescription"
+msgstr "وصفة جديدة ."
+
+#: .\doctor\views.py:729
+msgid "A new prescription has been added."
+msgstr "تمت اضافة وصفة طبية جديدة"
+
+#: .\doctor\views.py:736
+msgid "Prescriptions added successfully."
+msgstr "تمت إضافة الوصفات بنجاح."
+
+#: .\doctor\views.py:770 .\doctor\views.py:823
+msgid "Prescription not found."
+msgstr "لم يتم العثور على الوصفة."
+
+#: .\doctor\views.py:789
+msgid "Prescription updated successfully."
+msgstr "تم تحديث الوصفة بنجاح."
+
+#: .\doctor\views.py:833
+msgid "Prescription deleted successfully."
+msgstr "تم حذف الوصفة بنجاح."
+
+#: .\doctor\views.py:868
+msgid "Invalid date format. Use YYYY-MM-DD."
+msgstr "تنسيق التاريخ غير صالح. استخدم YYYY-MM-DD."
+
+#: .\doctor\views.py:903
+msgid "Daily schedule retrieved successfully."
+msgstr "تم جلب الجدول اليومي بنجاح."
+
+#: .\doctor\views.py:964
+msgid "Appointment requests retrieved successfully."
+msgstr "تم جلب طلبات المواعيد بنجاح."
+
+#: .\doctor\views.py:1027
+msgid "Only pending appointments can be approved."
+msgstr "يمكن قبول المواعيد المعلقة فقط."
+
+#: .\doctor\views.py:1038
+msgid "Appointment Approved"
+msgstr "تم قبول الموعد بنجاح."
+
+#: .\doctor\views.py:1039
+msgid "Your appointment has been approved."
+msgstr "يمكن قبول المواعيد المعلقة فقط."
+
+#: .\doctor\views.py:1046
+msgid "Appointment approved successfully."
+msgstr "تم قبول الموعد بنجاح."
+
+#: .\doctor\views.py:1088
+msgid "Completed appointments cannot be modified."
+msgstr "لا يمكن تعديل المواعيد المكتملة."
+
+#: .\doctor\views.py:1099
+msgid "Appointment Rejected"
+msgstr "تم رفض الموعد بنجاح."
+
+#: .\doctor\views.py:1100
+msgid "Your appointment has been rejected."
+msgstr "طلب موعد جديد."
+
+#: .\doctor\views.py:1107
+msgid "Appointment rejected successfully."
+msgstr "تم رفض الموعد بنجاح."
+
+#: .\doctor\views.py:1159
+msgid "Appointment review retrieved successfully."
+msgstr "تم جلب تقييم الموعد بنجاح."
+
+#: .\doctor\views.py:1169
+msgid "New appointment request."
+msgstr "طلب موعد جديد."
+
+#: .\doctor\views.py:1173
+msgid "Payment completed."
+msgstr "تم الدفع بنجاح."
+
+#: .\doctor\views.py:1247
+msgid "Diagnosis saved successfully."
+msgstr "تم حفظ التشخيص بنجاح."
+
+#: .\doctor\views.py:1282
+msgid "Diagnosis not found."
+msgstr "لم يتم العثور على التشخيص."
+
+#: .\doctor\views.py:1292
+msgid "Diagnosis details retrieved successfully."
+msgstr "تم جلب تفاصيل التشخيص بنجاح."
+
+#: .\doctor\views.py:1365
+msgid "Billing data retrieved successfully."
+msgstr "تم جلب بيانات الفواتير بنجاح."
+
+#: .\doctor\views.py:1397
+msgid "Doctor settings retrieved successfully."
+msgstr "تم جلب إعدادات الطبيب بنجاح."
+
+#: .\doctor\views.py:1425
+msgid "Doctor settings updated successfully."
+msgstr "تم تحديث إعدادات الطبيب بنجاح."
+
+#: .\doctor\views.py:1473
+msgid "Profile updated successfully."
+msgstr "تم تحديث الملف الشخصي بنجاح."
+
+#: .\doctor\views.py:1541
+msgid "appointment_date is required."
+msgstr "حقل appointment_date مطلوب."
+
+#: .\doctor\views.py:1574
+#, fuzzy
+#| msgid "Appointment Rejected"
+msgid "Appointment Rescheduled"
+msgstr "تم رفض الموعد بنجاح."
+
+#: .\doctor\views.py:1576
+msgid "Dr. %(doctor_name)s has rescheduled your appointment to %(appointment_date)s."
+msgstr "قام الدكتور %(doctor_name)s بإعادة جدولة موعدك إلى %(appointment_date)s."
+
+#: .\doctor\views.py:1590
+msgid "Appointment rescheduled successfully."
+msgstr "تمت إعادة جدولة الموعد بنجاح."
+
+#: .\doctor\views.py:1645
+msgid "Consultation details retrieved successfully."
+msgstr "تم جلب تفاصيل الاستشارة بنجاح."
+
+#: .\doctor\views.py:1746
+msgid "Patient health updated successfully."
+msgstr "تم تحديث الحالة الصحية للمريض بنجاح."
+
+#: .\doctor\views.py:1807
+msgid "Prescription data retrieved successfully."
+msgstr "تم جلب بيانات الوصفة بنجاح."
+
+#: .\doctor\views.py:1851
+msgid "Medication name is required."
+msgstr "اسم الدواء مطلوب."
+
+#: .\doctor\views.py:1882
+msgid "No medical record found."
+msgstr "لم يتم العثور على سجل طبي."
+
+#: .\doctor\views.py:1897
+msgid "Medication added successfully."
+msgstr "تمت إضافة الدواء بنجاح."
+
+#: .\doctor\views.py:1953
+msgid "Prescription finalized successfully."
+msgstr "تم اعتماد الوصفة بنجاح."
+
+#: .\doctor\views.py:2013
+msgid "Patient medical record retrieved successfully."
+msgstr "تم جلب السجل الطبي للمريض بنجاح."
+
+#: .\patient\serializers.py:188
+msgid "Format must be like 120/80"
+msgstr "يجب أن يكون التنسيق مثل 120/80"
+
+#: .\patient\serializers.py:191
+msgid "Invalid systolic value"
+msgstr "قيمة الضغط الانقباضي غير صالحة"
+
+#: .\patient\serializers.py:194
+msgid "Invalid diastolic value"
+msgstr "قيمة الضغط الانبساطي غير صالحة"
+
+#: .\patient\serializers.py:201
+msgid "Heart rate out of range"
+msgstr "معدل نبضات القلب خارج النطاق المسموح"
+
+#: .\patient\serializers.py:207
+msgid "Glucose value unrealistic"
+msgstr "قيمة السكر غير منطقية"
+
+#: .\patient\serializers.py:235
+msgid "Condition name too short"
+msgstr "اسم الحالة قصير جداً"
+
+#: .\patient\serializers.py:242
+msgid "Invalid status"
+msgstr "الحالة غير صالحة"
+
+#: .\patient\serializers.py:248
+msgid "Date cannot be in the future"
+msgstr "لا يمكن أن يكون التاريخ في المستقبل"
+
+#: .\patient\serializers.py:255
+msgid "Notes required for high risk conditions"
+msgstr "الملاحظات مطلوبة للحالات عالية الخطورة"
+
+#: .\patient\serializers.py:273
+msgid "Too short"
+msgstr "قصير جداً"
+
+#: .\patient\serializers.py:302
+msgid "Drug name too short"
+msgstr "اسم الدواء قصير جداً"
+
+#: .\patient\serializers.py:307
+msgid "Dosage must contain a number"
+msgstr "يجب أن تحتوي الجرعة على رقم"
+
+#: .\patient\views.py:82 .\users\views.py:70
+msgid "Account not verified"
+msgstr "الحساب غير مفعل"
+
+#: .\patient\views.py:88 .\patient\views.py:218 .\patient\views.py:395
+#: .\users\views.py:344
+msgid "Patient not found"
+msgstr "لم يتم العثور على المريض"
+
+#: .\patient\views.py:97 .\patient\views.py:262
+msgid "appointment_date is required"
+msgstr "حقل appointment_date مطلوب"
+
+#: .\patient\views.py:103 .\patient\views.py:267
+msgid "Invalid date format"
+msgstr "تنسيق التاريخ غير صالح"
+
+#: .\patient\views.py:107 .\patient\views.py:273
+msgid "Cannot book past time"
+msgstr "لا يمكن حجز موعد في وقت سابق"
+
+#: .\patient\views.py:113 .\patient\views.py:283
+msgid "This slot is already booked"
+msgstr "هذا الموعد محجوز بالفعل"
+
+#: .\patient\views.py:146
+msgid "New Appointment"
+msgstr "طلب موعد جديد."
+
+#: .\patient\views.py:147
+#, python-format
+msgid "%(patient)s booked a new appointment."
+msgstr "قام %(patient)s بحجز موعد جديد."
+
+#: .\patient\views.py:205
+msgid "No medical record found for this appointment"
+msgstr "لم يتم العثور على سجل طبي لهذا الموعد"
+
+#: .\patient\views.py:229
+msgid "No upcoming appointments"
+msgstr "لا توجد مواعيد قادمة"
+
+#: .\patient\views.py:293 .\patient\views.py:420
+msgid "Appointment Updated"
+msgstr "تم تحديث الموعد بنجاح."
+
+#: .\patient\views.py:295
+msgid "Patient %(patient_name)s changed the appointment date to %(appointment_date)s."
+msgstr "تم تغيير تاريخ الموعد من قبل المريض %(patient_name)s إلى %(appointment_date)s."
+
+#: .\patient\views.py:317 .\patient\views.py:388 .\users\views.py:170
+msgid "appointment_id is required"
+msgstr "حقل appointment_id مطلوب"
+
+#: .\patient\views.py:320
+msgid "payment_method is required"
+msgstr "حقل payment_method مطلوب"
+
+#: .\patient\views.py:326
+msgid "Invalid appointment"
+msgstr "الموعد غير صالح"
+
+#: .\patient\views.py:333
+msgid "Payment already exists for this appointment"
+msgstr "يوجد دفعة مسبقاً لهذا الموعد"
+
+#: .\patient\views.py:359
+msgid "New Payment"
+msgstr "دفع جديد"
+
+#: .\patient\views.py:360
+#, python-format
+msgid "A new payment has been received by Patient %(patient_name)s ."
+msgstr "تم استلام دفعة مالية جديدة من قبل المريض %(patient_name)s."
+
+#: .\patient\views.py:369
+msgid "Payment successful"
+msgstr "تم الدفع بنجاح"
+
+#: .\patient\views.py:402 .\users\views.py:176
+msgid "Appointment not found"
+msgstr "لم يتم العثور على الموعد"
+
+#: .\patient\views.py:406
+msgid "Already cancelled"
+msgstr "تم الإلغاء مسبقاً"
+
+#: .\patient\views.py:411
+msgid "Completed appointment can't be cancelled"
+msgstr "لا يمكن إلغاء الموعد المكتمل"
+
+#: .\patient\views.py:421
+#, python-format
+msgid "Patient %(patient_name)s cancelled an appointment."
+msgstr "تم إلغاء موعد من قبل المريض %(patient_name)s."
+
+#: .\patient\views.py:444
+msgid "Appointment cancelled successfully"
+msgstr "تم إلغاء الموعد بنجاح"
+
+#: .\patient\views.py:509
+msgid "No vitals found"
+msgstr "لم يتم العثور على أي قياسات حيوية"
+
+#: .\patient\views.py:688
+msgid "Medications added"
+msgstr "تمت إضافة الأدوية"
+
+#: .\patient\views.py:788
+msgid "Health records updated successfully"
+msgstr "تم تحديث السجلات الصحية بنجاح"
+
+#: .\patient\views.py:802
+msgid "Clinic not found"
+msgstr "لم يتم العثور على العيادة"
+
+#: .\users\views.py:61 .\users\views.py:66
+msgid "Invalid credentials"
+msgstr "بيانات تسجيل الدخول غير صحيحة"
+
+#: .\users\views.py:101
+msgid "Refresh token is required"
+msgstr "حقل Refresh token مطلوب"
+
+#: .\users\views.py:113
+msgid "Logged out successfully"
+msgstr "تم تسجيل الخروج بنجاح"
+
+#: .\users\views.py:116
+msgid "Invalid token"
+msgstr "الرمز غير صالح"
+
+#: .\users\views.py:165
+msgid "Only doctors can use AI"
+msgstr "يمكن للأطباء فقط استخدام الذكاء الاصطناعي"
+
+#: .\users\views.py:208 .\users\views.py:241 .\users\views.py:264
+#: .\users\views.py:294 .\users\views.py:314
+msgid "User not found"
+msgstr "لم يتم العثور على المستخدم"
+
+#: .\users\views.py:217
+msgid "Your Verification Code"
+msgstr "رمز التحقق الخاص بك"
+
+#: .\users\views.py:218
+#, python-format
+msgid "Your code is: %(code)s"
+msgstr "رمزك هو: %(code)s"
+
+#: .\users\views.py:225
+msgid "Acount created . Verification code sent to email ."
+msgstr "تم إنشاء الحساب. تم إرسال رمز التحقق إلى البريد الإلكتروني."
+
+#: .\users\views.py:244 .\users\views.py:297
+msgid "Invalid code"
+msgstr "الرمز غير صالح"
+
+#: .\users\views.py:250
+msgid "Account verified successfully"
+msgstr "تم تفعيل الحساب بنجاح"
+
+#: .\users\views.py:272
+msgid "Password Reset Code"
+msgstr "رمز إعادة تعيين كلمة المرور"
+
+#: .\users\views.py:273
+#, python-format
+msgid "Your reset code is: %(code)s"
+msgstr "رمز إعادة التعيين الخاص بك هو: %(code)s"
+
+#: .\users\views.py:279
+msgid "Reset code sent"
+msgstr "تم إرسال رمز إعادة التعيين"
+
+#: .\users\views.py:299
+msgid "Code verified"
+msgstr "تم التحقق من الرمز"
+
+#: .\users\views.py:320
+msgid "Password reset successful"
+msgstr "تمت إعادة تعيين كلمة المرور بنجاح"
+
+#: .\users\views.py:364
+msgid "Date is required"
+msgstr "التاريخ مطلوب"
+
+#: .\users\views.py:407
+msgid "Both fields are required"
+msgstr "كلا الحقلين مطلوبان"
+
+#: .\users\views.py:413
+msgid "Old password is incorrect"
+msgstr "كلمة المرور القديمة غير صحيحة"
+
+#: .\users\views.py:419
+msgid "Password changed successfully"
+msgstr "تم تغيير كلمة المرور بنجاح"
+
+#: .\users\views.py:492
+msgid "Logged out from all devices"
+msgstr "تم تسجيل الخروج من جميع الأجهزة"
+
+#: .\users\views.py:549 .\users\views.py:597
+msgid "Notification not found."
+msgstr "لم يتم العثور على الإشعار."
+
+#: .\users\views.py:560 .\users\views.py:570 .\users\views.py:620
+#: .\users\views.py:631
+msgid "You are not allowed to access this notification."
+msgstr "غير مسموح لك بالوصول إلى هذا المريض."
+
+#: .\users\views.py:578
+msgid "Notification marked as read."
+msgstr "تم تحديد الإشعار كمقروء."
+
+#: .\users\views.py:641
+msgid "Notification dismissed successfully."
+msgstr "تم حذف الإشعار بنجاح."
+
+#: .\users\views.py:691
+msgid "All notifications marked as read."
+msgstr "تم تحديد الإشعار كمقروء."
