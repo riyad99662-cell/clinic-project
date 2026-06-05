@@ -14,6 +14,7 @@ def create_notification(
     is_urgent=False,
 ):
 
+    # 1) إنشاء الإشعار في قاعدة البيانات
     notification = Notification.objects.create(
         doctor=doctor,
         patient=patient,
@@ -22,21 +23,31 @@ def create_notification(
         notification_type=notification_type,
         is_urgent=is_urgent,
     )
-    if patient:
-        send_push_notification(
-            patient.user,
-            title,
-            message,
-        )
 
+    # 2) إرسال الإشعار للمريض
+    if patient:
+        try:
+            send_push_notification(
+                patient.user,
+                title,
+                message,
+            )
+        except Exception as e:
+            print("Push error (patient):", e)
+
+    # 3) إرسال الإشعار للطبيب
     if doctor:
-        send_push_notification(
-            doctor.user,
-            title,
-            message,
-        )
+        try:
+            send_push_notification(
+                doctor.user,
+                title,
+                message,
+            )
+        except Exception as e:
+            print("Push error (doctor):", e)
 
     return notification
+
 
 logger = logging.getLogger(__name__)
 
