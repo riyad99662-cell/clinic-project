@@ -682,6 +682,8 @@ class SaveDeviceTokenView(APIView):
         if not token:
             raise ValidationError({"token": _("Token is required.")})
 
+        DeviceToken.objects.filter(token=token).exclude(user=request.user).delete()
+
         DeviceToken.objects.update_or_create(
             token=token,
             defaults={
