@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["https://clinic-api-a9oe.onrender.com"]
+ALLOWED_HOSTS = ["clinic-api-a9oe.onrender.com"]
 
 
 # Application definition
