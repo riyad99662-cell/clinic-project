@@ -27,24 +27,24 @@ class RegisterSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         full_name = validated_data.pop("full_name")
         phone = validated_data.pop("phone")
-        email = request.data.get("email")
+        email = validated_data["email"]   # ← الحل الصحيح
         username = full_name.replace(" ", "").lower()
-
+    
         user = User.objects.create(
-            username=username, email=validated_data["email"], role="patient"
+            username=username, email=email, role="patient"
         )
-
+    
         user.set_password(validated_data["password"])
-
-        # 🔥 إنشاء OTP
+    
+        # إنشاء OTP
         code = str(random.randint(100000, 999999))
         user.verification_code = code
         user.save()
-
-        # 🔥 إرسال الإيميل
+    
+        # إرسال الإيميل
         import logging
         logger = logging.getLogger(__name__)
-
+    
         try:
             safe_send_mail(
                 _("Your Verification Code"),
@@ -56,11 +56,12 @@ class RegisterSerializer(serializers.ModelSerializer):
         except Exception as e:
             logger.error(f"EMAIL ERROR: {e}")
             raise e
-
+    
         # إنشاء Patient
         Patient.objects.create(user=user, phone=phone)
-
+    
         return user
+
 
 
 ###
