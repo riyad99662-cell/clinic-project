@@ -28,7 +28,7 @@ Format:
 """
 
     headers = {
-        "HTTP_AUTHORIZATION": f"Bearer {settings.OPENROUTER_API_KEY}",
+        "Authorization": f"Bearer {settings.OPENROUTER_API_KEY}",
         "Content-Type": "application/json",
         "Referer": "https://clinic-api.onrender.com",
         "X-Title": "Clinic AI",
@@ -123,7 +123,7 @@ def generate_clinical_insight(data):
     """
 
     headers = {
-        "HTTP_AUTHORIZATION": f"Bearer {settings.OPENROUTER_API_KEY}",
+        "Authorization": f"Bearer {settings.OPENROUTER_API_KEY}",
         "Content-Type": "application/json",
         "Referer": "https://clinic-api.onrender.com",
         "X-Title": "Clinic AI",
