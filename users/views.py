@@ -18,7 +18,6 @@ from django.conf import settings
 from django.contrib.auth import authenticate
 from rest_framework_simplejwt.tokens import RefreshToken
 import random
-from django.core.mail import send_mail
 from django.utils import timezone
 from django.utils.timezone import make_aware, is_naive
 from datetime import datetime, timedelta
@@ -117,23 +116,6 @@ class LogoutView(APIView):
 
         except Exception:
             return Response({"error": _("Invalid token")}, status=400)
-
-
-###
-
-
-# class DoctorAppointmentsView(generics.ListAPIView):
-
-#     serializer_class = AppointmentSerializer
-#     permission_classes = [IsAuthenticated]
-
-#     def get_queryset(self):
-#         try:
-#             doctor = Doctor.objects.get(user=self.request.user)
-#         except Doctor.DoesNotExist:
-#             raise NotFound("Doctor profile not found")
-
-#         return Appointment.objects.filter(doctor=doctor).order_by("-appointment_date")
 
 
 ###

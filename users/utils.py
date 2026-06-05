@@ -45,13 +45,16 @@ logger = logging.getLogger(__name__)
 from django.core.mail import send_mail
 
 
+from django.core.mail import send_mail
 import traceback
 
 
 def safe_send_mail(*args, **kwargs):
     try:
         return send_mail(*args, **kwargs)
+
     except Exception as e:
-        print("EMAIL ERROR:", repr(e))
-        traceback.print_exc()
-        return None
+        print("EMAIL ERROR:", str(e))
+        print(traceback.format_exc())
+
+        return 0
