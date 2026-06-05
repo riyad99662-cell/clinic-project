@@ -1,3 +1,4 @@
+from urllib import request
 from rest_framework import serializers
 from .models import (
     User,
@@ -12,6 +13,7 @@ import random
 from users.utils import safe_send_mail
 from django.conf import settings
 
+from django.utils.translation import gettext_lazy as _
 
 class RegisterSerializer(serializers.ModelSerializer):
 
@@ -25,7 +27,7 @@ class RegisterSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         full_name = validated_data.pop("full_name")
         phone = validated_data.pop("phone")
-
+        email = request.data.get("email")
         username = full_name.replace(" ", "").lower()
 
         user = User.objects.create(
@@ -40,7 +42,13 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.save()
 
         # 🔥 إرسال الإيميل
-        print(f"OTP CODE: {code}")
+        safe_send_mail(
+            _("Your Verification Code"),
+            _("Your code is: %(code)s") % {"code": code},
+            settings.EMAIL_HOST_USER,
+            [email],
+            fail_silently=False,
+        )
 
         # إنشاء Patient
         Patient.objects.create(user=user, phone=phone)
