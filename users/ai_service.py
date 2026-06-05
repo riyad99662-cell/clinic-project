@@ -30,7 +30,10 @@ Format:
     headers = {
         "Authorization": f"Bearer {settings.OPENROUTER_API_KEY}",
         "Content-Type": "application/json",
+        "HTTP-Referer": "https://clinic-api.onrender.com",
+        "X-Title": "Clinic AI",
     }
+
 
     payload = {
         "model": "meta-llama/llama-3.1-8b-instruct",
@@ -123,6 +126,8 @@ def generate_clinical_insight(data):
     headers = {
         "Authorization": f"Bearer {settings.OPENROUTER_API_KEY}",
         "Content-Type": "application/json",
+        "HTTP-Referer": "https://clinic-api.onrender.com",
+        "X-Title": "Clinic AI",
     }
 
     payload = {
