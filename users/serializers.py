@@ -42,13 +42,20 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.save()
 
         # 🔥 إرسال الإيميل
-        safe_send_mail(
-            _("Your Verification Code"),
-            _("Your code is: %(code)s") % {"code": code},
-            settings.EMAIL_HOST_USER,
-            [email],
-            fail_silently=False,
-        )
+        import logging
+        logger = logging.getLogger(__name__)
+
+        try:
+            safe_send_mail(
+                _("Your Verification Code"),
+                _("Your code is: %(code)s") % {"code": code},
+                settings.EMAIL_HOST_USER,
+                [email],
+                fail_silently=False,
+            )
+        except Exception as e:
+            logger.error(f"EMAIL ERROR: {e}")
+            raise e
 
         # إنشاء Patient
         Patient.objects.create(user=user, phone=phone)
