@@ -42,47 +42,11 @@ def create_notification(
 
 logger = logging.getLogger(__name__)
 
-def send_mail(
-    subject,
-    message,
-    from_email,
-    recipient_list,
-    *,
-    fail_silently=False,
-    auth_user=None,
-    auth_password=None,
-    connection=None,
-    html_message=None,
-):
+from django.core.mail import send_mail
+
+def safe_send_mail(*args, **kwargs):
     try:
-        connection = connection or get_connection(
-            username=auth_user,
-            password=auth_password,
-            fail_silently=False,  # نخليه False لنمسك الأخطاء
-        )
-
-        mail = EmailMultiAlternatives(
-            subject,
-            message,
-            from_email or settings.DEFAULT_FROM_EMAIL,
-            recipient_list,
-            connection=connection,
-        )
-
-        if html_message:
-            mail.attach_alternative(html_message, "text/html")
-
-        return mail.send()
-
+        return send_mail(*args, **kwargs)
     except Exception as e:
-        # مهم جدًا: لا نكسر التطبيق
-        logger.error(f"Email sending failed: {e}")
-
-        # ما نوقف التسجيل أو الـ API
-        if fail_silently:
-            return 0
-
-        # إذا بدك صارم (اختياري)
-        # raise
-
-        return 0
+        logger.error(f"EMAIL FAILED: {e}")
+        return None

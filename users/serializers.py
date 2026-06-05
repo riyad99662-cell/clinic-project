@@ -9,7 +9,7 @@ from .models import (
     DeviceToken,
 )
 import random
-from users.utils import send_mail
+from users.utils import safe_send_mail
 from django.conf import settings
 
 
@@ -40,17 +40,17 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.save()
 
         # 🔥 إرسال الإيميل
-        result = send_mail(
+        result = safe_send_mail(
             "Your Verification Code",
             f"Your code is: {code}",
             settings.EMAIL_HOST_USER,
             [user.email],
-            fail_silently=False,
+            fail_silently=True,
         )
 
         if result == 0 :
             print("Email not sent") 
-        
+
         # إنشاء Patient
         Patient.objects.create(user=user, phone=phone)
 
