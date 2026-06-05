@@ -35,3 +35,4 @@ def send_push_notification(user, title, body):
         except Exception as e:
             print("Push error:", e)
             continue
+print("Firebase initialized:", firebase_app is not None)
