@@ -40,7 +40,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.save()
 
         # 🔥 إرسال الإيميل
-        send_mail(
+        result = send_mail(
             "Your Verification Code",
             f"Your code is: {code}",
             settings.EMAIL_HOST_USER,
@@ -48,6 +48,9 @@ class RegisterSerializer(serializers.ModelSerializer):
             fail_silently=False,
         )
 
+        if result == 0 :
+            print("Email not sent") 
+        
         # إنشاء Patient
         Patient.objects.create(user=user, phone=phone)
 
