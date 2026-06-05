@@ -197,3 +197,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 FIREBASE_CREDENTIALS_PATH = (
     BASE_DIR / "clinicproject-9a731-firebase-adminsdk-fbsvc-b44fcbfe39.json"
 )
+
+
+import resend
+RESEND_API_KEY = os.getenv("RESEND_API_KEY")
+resend.api_key = RESEND_API_KEY

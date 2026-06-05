@@ -44,17 +44,22 @@ logger = logging.getLogger(__name__)
 
 from django.core.mail import send_mail
 
-
-from django.core.mail import send_mail
-import traceback
+import resend
 
 
-def safe_send_mail(*args, **kwargs):
+import resend
+
+
+def send_verification_email(to_email, code):
     try:
-        return send_mail(*args, **kwargs)
-
+        resend.Emails.send(
+            {
+                "from": "Clinic App <onboarding@resend.dev>",
+                "to": to_email,
+                "subject": "Your Verification Code",
+                "html": f"<p>Your verification code is: <strong>{code}</strong></p>",
+            }
+        )
     except Exception as e:
-        print("EMAIL ERROR:", str(e))
-        print(traceback.format_exc())
-
-        return 0
+        print("EMAIL ERROR:", e)
+        raise
