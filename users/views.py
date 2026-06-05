@@ -37,6 +37,8 @@ from patient.serializers import (
 )
 
 
+from users.utils import send_mail
+
 from django.utils.translation import gettext_lazy as _
 
 ###
