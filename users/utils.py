@@ -2,8 +2,6 @@ from users.firebase_service import send_push_notification
 from users.models import Notification
 
 import logging
-from django.core.mail import EmailMultiAlternatives, get_connection
-from django.conf import settings
 
 
 def create_notification(
@@ -41,11 +39,6 @@ def create_notification(
     return notification
 
 logger = logging.getLogger(__name__)
-
-from django.core.mail import send_mail
-
-import resend
-
 
 import resend
 

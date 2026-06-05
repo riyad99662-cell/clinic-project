@@ -10,7 +10,6 @@ from .models import (
 )
 import random
 from users.utils import send_verification_email
-from django.conf import settings
 
 from django.utils.translation import gettext_lazy as _
 

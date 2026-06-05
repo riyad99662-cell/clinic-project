@@ -36,7 +36,7 @@ from patient.serializers import (
 )
 
 
-from users.utils import safe_send_mail, send_verification_email
+from users.utils import send_verification_email
 
 from django.utils.translation import gettext_lazy as _
 
