@@ -36,7 +36,7 @@ from patient.serializers import (
 )
 
 
-from users.utils import safe_send_mail
+from users.utils import safe_send_mail, send_verification_email
 
 from django.utils.translation import gettext_lazy as _
 
@@ -198,13 +198,7 @@ class SendOTPView(APIView):
         user.save()
 
         # إرسال ايميل
-        safe_send_mail(
-            _("Your Verification Code"),
-            _("Your code is: %(code)s") % {"code": code},
-            settings.EMAIL_HOST_USER,
-            [email],
-            fail_silently=False,
-        )
+        send_verification_email(email, code)
 
         return Response(
             {"message": _("Acount created . Verification code sent to email .")}
@@ -253,13 +247,7 @@ class ForgotPasswordView(APIView):
         user.verification_code = code
         user.save()
 
-        safe_send_mail(
-            _("Password Reset Code"),
-            _("Your reset code is: %(code)s") % {"code": code},
-            settings.EMAIL_HOST_USER,
-            [email],
-            fail_silently=False,
-        )
+        send_verification_email(email, code)
 
         return Response({"message": _("Reset code sent")})
 
