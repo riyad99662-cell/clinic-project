@@ -1,5 +1,6 @@
 from users.firebase_service import send_push_notification
 from users.models import Notification
+from rest_framework.response import Response
 
 import logging
 
@@ -56,7 +57,30 @@ def create_notification(
         except Exception as e:
             print("Push error (doctor):", e)
 
-    return notification
+    
+
+    return Response(
+        {
+            "status": "success",
+            "message": "Notification created and sent successfully",
+            "notification": {
+                "id": notification.id,
+                "title": notification.title,
+                "body": notification.message,
+                "type": notification.notification_type,
+                "is_urgent": notification.is_urgent,
+            },
+            "push_data_sent": {
+                "type": notification_type,
+                "notification_id": str(notification.id),
+                "is_urgent": str(is_urgent),
+            },
+            "sent_to": {
+                "patient": bool(patient),
+                "doctor": bool(doctor),
+            },
+        }
+    )
 
 
 logger = logging.getLogger(__name__)
