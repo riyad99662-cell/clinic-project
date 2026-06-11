@@ -31,6 +31,11 @@ def create_notification(
                 patient.user,
                 title,
                 message,
+                data={
+                    "type": notification_type,
+                    "notification_id": str(notification.id),
+                    "is_urgent": str(is_urgent),
+                },
             )
         except Exception as e:
             print("Push error (patient):", e)
@@ -42,6 +47,11 @@ def create_notification(
                 doctor.user,
                 title,
                 message,
+                data={
+                    "type": notification_type,
+                    "notification_id": str(notification.id),
+                    "is_urgent": str(is_urgent),
+                },
             )
         except Exception as e:
             print("Push error (doctor):", e)
