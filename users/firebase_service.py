@@ -36,7 +36,14 @@ def send_push_notification(user, title, body, data=None):
                     title=title,
                     body=body,
                 ),
-                data=data or {},  # إضافة بيانات إضافية
+                data=data or {},
+                android=messaging.AndroidConfig(
+                    priority="high",
+                    notification=messaging.AndroidNotification(
+                        priority="max",
+                        channel_id="clinic_channel",
+                    ),
+                ),
             )
 
             # Send
