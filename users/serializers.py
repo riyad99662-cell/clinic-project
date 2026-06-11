@@ -111,8 +111,6 @@ class NotificationSerializer(serializers.ModelSerializer):
 
     doctor_name = serializers.SerializerMethodField()
 
-    created_at = serializers.DateTimeField(format="%Y-%m-%d %H:%M")
-
     class Meta:
 
         model = Notification
