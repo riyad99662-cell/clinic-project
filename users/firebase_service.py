@@ -34,8 +34,8 @@ def send_push_notification(user, title, body, data=None):
             message = messaging.Message(
                 token=device.token,
                 notification=messaging.Notification(
-                    title=title,
-                    body=body,
+                    title=str(title),
+                    body=str(body),
                 ),
                 data=data or {},
                 android=messaging.AndroidConfig(
