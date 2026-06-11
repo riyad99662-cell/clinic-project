@@ -1,3 +1,4 @@
+from asyncio import exceptions
 from django.conf import settings
 import firebase_admin
 from firebase_admin import credentials, messaging
@@ -50,15 +51,13 @@ def send_push_notification(user, title, body, data=None):
             response = messaging.send(message)
             print(f"✅ Push sent to {device.token} | Response: {response}")
 
-        except messaging.UnregisteredError:
-            # Token expired → delete it
+        except exceptions.UnregisteredError:
             print(f"🗑️ Removing invalid token: {device.token}")
             device.delete()
 
-        except messaging.InvalidArgumentError:
-            print(f"❌ Invalid token format: {device.token}")
-            device.delete()
-
-        except Exception as e:
-            print(f"❌ Push error for token {device.token}: {e}")
+        except exceptions.FirebaseError as e:
+            print(f"❌ Firebase error for {device.token}: {e}")
+    
+        except Exception as e:  
+            print(f"❌ Unknown error for {device.token}: {e}")
             continue
