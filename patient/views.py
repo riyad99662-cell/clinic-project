@@ -863,12 +863,17 @@ class HasMedicalRecordView(APIView):
                 status=404,
             )
 
-        medical_record = MedicalRecord.objects.filter(patient=patient).first()
+        try:
+            medical_record = MedicalRecord.objects.filter(patient=patient).first()
 
-        return Response(
-            {
-                "success": True,
-                "has_medical_record": medical_record is not None,
-                "medical_record_id": (medical_record.id if medical_record else None),
-            }
-        )
+            return Response(
+                {
+                    "success": True,
+                    "has_medical_record": medical_record is not None,
+                    "medical_record_id": (medical_record.id if medical_record else None),
+                }
+            )
+
+        except Exception as e:
+            print("🔥 ERROR in has_medical_record:", e)
+            raise e
