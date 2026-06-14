@@ -842,3 +842,33 @@ class PatientNotificationsView(ListAPIView):
 
 
 ###
+
+
+class HasMedicalRecordView(APIView):
+
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+
+        try:
+            patient = Patient.objects.get(user=request.user)
+
+        except Patient.DoesNotExist:
+
+            return Response(
+                {
+                    "success": False,
+                    "message": _("Patient not found"),
+                },
+                status=404,
+            )
+
+        medical_record = MedicalRecord.objects.filter(patient=patient).first()
+
+        return Response(
+            {
+                "success": True,
+                "has_medical_record": medical_record is not None,
+                "medical_record_id": (medical_record.id if medical_record else None),
+            }
+        )

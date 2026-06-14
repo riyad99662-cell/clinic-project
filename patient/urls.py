@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import (
     CreateAppointmentView,
+    HasMedicalRecordView,
     MyAppointmentsView,
     MyInvoicesView,
     MedicalRecordDetailView,
@@ -83,5 +84,10 @@ urlpatterns = [
     path(
         "notifications/",
         PatientNotificationsView.as_view(),
+    ),
+    path(
+        "has_medical_record/",
+        HasMedicalRecordView.as_view(),
+        name="has_medical_record",
     ),
 ]
